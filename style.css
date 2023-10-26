@@ -1,0 +1,940 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    color: #fff;
+    background-color: #000;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #F7F7F7;
+}
+
+#nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background-color: burlywood; */
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+#nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#links {
+    padding: 10px;
+}
+
+#nav-part1 {
+    /* background-color: RED; */
+    height: 82px;
+    overflow: hidden;
+}
+
+#nav-part1 svg {
+    display: block;
+}
+
+#nav-part2 #links a {
+    text-transform: uppercase;
+
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 20px;
+}
+
+#icons {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #F7F7F7;
+}
+
+#nav-part2 #icons i {
+    font-size: 18px;
+    margin: 0 20px;
+}
+
+#cursor {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(closest-side at 15px 25px, #ccc 15%, #eee 40%);
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#page1 {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 16vw 0.5vw 0vw 0.5vw;
+    margin-bottom: 5vw;
+}
+
+#page1>h1 {
+    text-align: center;
+}
+
+#page1 h1 {
+    font-size: 16.5vw;
+    font-weight: 700;
+    font-family: futura;
+    letter-spacing: -1vw;
+    line-height: 14vw;
+    text-transform: uppercase;
+}
+
+#video-box {
+    width: 100%;
+    height: 100vh;
+    margin-top: 1vw;
+    padding: 0vw 1.5vw;
+    position: relative;
+}
+
+#video-box video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#video-box #play {
+    position: fixed;
+    padding: 3vw 2.2vw;
+    font-size: 1.2vw;
+    font-family: futura;
+    color: #fff;
+    background: #000;
+    text-transform: uppercase;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+    transform: translate(-50%,-50%);
+}
+
+.line-break {
+    padding: 0vw 1vw;
+}
+
+#bottom-line {
+    margin-top: 15vw;
+}
+
+.line-break .two-phrases {
+    display: flex;
+    justify-content: space-between;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9vw;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    padding: 0.2vw 0.1vw;
+    text-transform: uppercase;
+}
+
+#page2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2vw 0.2vw;
+}
+
+#page2 .elem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 31%;
+    overflow: hidden;
+}
+
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    position: relative;
+}
+
+#page2 .elem .detail-box {
+    flex-direction: column;
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 45px;
+    width: 22%;
+    padding-top: 1vw;
+    z-index: 5;
+    background: #fff;
+    border-radius: 50px;
+    transition: height 0.2s ease, transform 0.5s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#page2 .elem .detail-box .detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3vw;
+}
+
+#page2 .elem .detail-box .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #000000;
+}
+
+#page2 .elem .detail-box .shop {
+    font-weight: 300;
+    font-size: 1vw;
+}
+
+#page2 .elem .detail-box .prod {
+    font-weight: 700;
+    font-size: 1vw;
+    opacity: 0.93;
+}
+
+#page2 .elem .detail-box .forward-icon {
+    font-size: 0.7vw;
+}
+
+#page2 .elem .detail-box .detail-prod {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#page2 .elem .detail-box .detail-prod .prod1,
+.prod2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#page2 .elem .detail-box .detail-prod .prod1 .detail-prod-img,
+.prod2 .detail-prod-img {
+    height: 60px;
+    width: 60px;
+}
+
+#page2 .elem .detail-box .detail-prod img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page2 .elem .detail-box .detail-prod .detail-prod-desc {
+    text-align: center;
+    font-size: 0.95vw;
+    padding: 1.5vw;
+}
+
+#page2 .elem .detail-box:hover {
+    height: 230px;
+    border-radius: 25px;
+    transform: scaleY();
+    align-items: start;
+    padding-top: 1.5vw;
+    cursor: pointer;
+}
+
+
+#page3 {
+    min-height: 120vh;
+    width: 100%;
+    padding: 2.5vw 2vw;
+}
+
+#page3 #page3-heading-desc {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#page3 #page3-heading-desc #page3-heading {
+    font-size: 4.2vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: futura;
+    width: 80%;
+    line-height: 4vw;
+}
+
+#page3 #page3-heading-desc #page3-desc {
+    width: 69%;
+    padding-left: 1vw;
+    font-size: 1.13vw;
+    font-weight: 300;
+    line-height: 1.7vw;
+    opacity: 0.9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#page3 #page3-heading-desc #page3-desc a {
+    width: fit-content;
+    padding: 1vw 0vw 0.5vw 0vw;
+    /* border: 1px solid red; */
+    position: relative;
+    cursor: pointer;
+}
+
+#page3 #page3-heading-desc #page3-desc a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+    word-spacing: 0.2vw;
+    font-size: 0.8vw;
+    color: #4b4a4a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#page3 #page3-heading-desc #page3-desc a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0vw;
+    width: 100%;
+    height: 0.09rem;
+    background: #000;
+    transform: scale(1, 1);
+    transition: transform 0.4s ease;
+}
+
+#page3 #page3-heading-desc #page3-desc a:hover::after {
+    transform-origin: 100% 0%;
+    transform: scale(0, 1);
+}
+
+#page3 .products {
+    min-height: 200vh;
+    margin-top: 5vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 2vw;
+    row-gap: 10vw;
+}
+
+#page3 .products .child-prod {
+    min-height: 74vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#page3 .products .child-prod .img-container {
+    height: 65vh;
+    width: 40vw;
+}
+
+#page3 .products .child-prod .img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page3 .products .child-prod span {
+    margin-top: 7vw;
+    text-transform: uppercase;
+    font-size: 0.95vw;
+    letter-spacing: 0.05vw;
+    opacity: 0.8;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+
+#page4 {
+    min-height: 100vh;
+    width: 100%;
+    padding: 4.5vw 2vw;
+}
+
+#page4 #message-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3vw;
+}
+
+#page4 #message-block #message {
+    font-size: 4.9vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: futura;
+    width: 80%;
+    line-height: 5vw;
+    text-align: center;
+}
+
+#page4 #message-block #message-btn button {
+    margin-top: 6vw;
+    color: #faf5f5;
+    background: #000;
+    padding: 1.5vw 5.5vw;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    opacity: 0.97;
+    cursor: pointer;
+}
+
+#page4 #message-block #thought {
+    margin-top: 3vw;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 20%;
+    margin-bottom: 20vw;
+}
+
+#page4 #impact-block {
+    padding: 3vw 0vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 105vh;
+    gap: 2vw;
+}
+
+#page4 #col1 #our-impact {
+    font-size: 1.8vw;
+    text-transform: uppercase;
+    font-family: futura;
+}
+
+#page4 #col1 p {
+    margin: 2vw 0;
+    width: 70%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.08vw;
+    line-height: 1.8vw;
+}
+
+#page4 #col1 a {
+    width: fit-content;
+    padding: 1vw 0vw 0.5vw 0vw;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+    word-spacing: 0.2vw;
+    font-size: 0.8vw;
+    color: #4b4a4a;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+}
+
+#page4 #col1 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0vw;
+    width: 100%;
+    height: 0.09rem;
+    background: #000;
+    transform: scale(1, 1);
+    transition: transform 0.4s ease;
+}
+
+#page4 #col1 a:hover::after {
+    transform-origin: 100% 0%;
+    transform: scale(0, 1);
+}
+
+#page4 .impact-img {
+    display: flex;
+    overflow: hidden;
+    gap: 2vw;
+}
+
+#page4 .impact-img img{
+    scale: 1.1;
+}
+
+#page4 #email-address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 0 0.5vw 0;
+}
+
+#page4 #email-address #email-msg {
+    font-size: 3vw;
+    font-family: futura;
+    text-transform: uppercase;
+}
+
+#page4 #email-address #arrow-icon {
+    font-size: 1.8vw;
+    cursor: pointer;
+}
+
+#page5{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#page5 #end-page-logo{
+    position: absolute;
+    top: -15vh;
+    left: 35%;
+}
+
+#page5 #connect-FAQ{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25vh;
+    padding: 0vw 2vw;
+    font-size: 0.95vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10vw;
+}
+
+#page5 #connect-FAQ #connect-with-us #connect-heading{
+    text-transform: uppercase;
+    margin-bottom: 1.5vw;
+    color: rgb(161, 156, 156);
+    font-size: 0.8vw;
+}
+
+#page5 #connect-FAQ #FAQs #FAQs-heading{
+    text-transform: uppercase;
+    margin-bottom: 1.5vw;
+    color: rgb(161, 156, 156);
+    font-size: 0.8vw;
+    text-align: right;
+} 
+
+#page5 #connect-FAQ #FAQs #more-FAQs{
+    text-align: right;
+}
+
+.hover-link{
+    margin-bottom: 0.5vw;
+    cursor: pointer;
+}
+
+.hover-link:hover{
+    color: rgb(161, 156, 156);
+}
+
+#mobile-content{
+    display: none;
+}
+
+#footer{
+    text-align: center;
+    padding: 0vw 18vw;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9vw;
+}
+
+#footer #footer1 span{
+    margin: 0 1.3vw;
+}
+
+#footer #footer1{
+    color: rgb(161, 156, 156);
+    font-size: 0.9vw;
+    margin-bottom: 6vw;
+}
+
+#footer #footer2{
+    line-height: 1.5vw;
+} 
+
+@media (max-width:700px) {
+    
+    #nav {
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    #nav #nav-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    #links {
+        padding: 10px;
+        display: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #nav-part1 {
+        height: 67px;
+        overflow: hidden;
+    }
+
+    #nav-part1 svg {
+        display: block;
+        height: 67px;
+        width: 80px;
+    }
+    #nav #twogoodlogo{
+        height: 40px;
+        margin-left: -20px;
+    }
+
+    #icons {
+        padding: 7px;
+        border-radius: 50px;
+        background-color: #F7F7F7;
+    }
+
+    #nav-part2 #icons i {
+        font-size: 15px;
+        margin: 0 20px;
+    }
+    #cursor {
+        height: 00px;
+        width: 00px;
+    }
+
+    #page1 {
+        min-height: 65vh;
+        padding: 40vw 1.5vw 0vw 1.5vw;
+        margin-bottom: 5vw;
+    }
+
+    #page1 h1 {
+        font-size: 15.8vw;
+        letter-spacing: -0.8vw;
+        line-height: 13.5vw;
+        text-transform: uppercase;
+    }
+
+    #video-box {
+        height: 25vh;
+        margin-top: 3vw;
+    }
+
+    #video-box #play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 9.8vw 7.2vw;
+        font-size: 4.8vw;
+        opacity: 1;
+        scale: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    .line-break {
+        padding: 0vw 3.9vw;
+    }
+
+    .line-break .two-phrases {
+        font-size: 3.3vw;
+        font-weight: 400;
+    }
+
+    #page2 {
+        flex-direction: column;
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        padding: 3.5vw 3.5vw;
+    }
+
+    #page2 .elem {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 3vw;
+    }
+
+    #page2 .elem .detail-box {
+        height: 45px;
+        width: 70%;
+        padding-top: 4vw;
+    }
+
+    #page2 .elem .detail-box .detail-header {
+        margin-bottom: 5vw;
+    }
+
+    #page2 .elem .detail-box .shop {
+        font-size: 3vw;
+    }
+
+    #page2 .elem .detail-box .prod {
+        font-weight: 700;
+        font-size: 3vw;
+    }
+
+    #page2 .elem .detail-box .forward-icon {
+        font-size: 2vw;
+    }
+
+    #page2 .elem .detail-box .detail-prod .prod1 .detail-prod-img,
+    .prod2 .detail-prod-img {
+        height: 80px;
+        width: 80px;
+    }
+
+    #page2 .elem .detail-box .detail-prod .detail-prod-desc {
+        font-size: 3vw;
+        padding: 3vw;
+    }
+
+    #page2 .elem .detail-box:hover {
+        padding-top: 4.5vw;
+    }
+
+    #page3 {
+        min-height: 120vh;
+        width: 100%;
+        padding: 2.5vw 3vw;
+    }
+
+    #page3 #page3-heading-desc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #page3 #page3-heading-desc #page3-heading {
+        text-align: center;
+        font-size: 7.9vw;
+        font-weight: 700;
+        width: 100%;
+        line-height: 8vw;
+    }
+
+    #page3 #page3-heading-desc #page3-desc {
+        text-align: center;
+        width: 100%;
+        margin-top: 6vw;
+        padding: 3vw 2vw;
+        font-size: 4.2vw;
+        font-weight: 300;
+        line-height: 6.7vw;
+    }
+
+    #page3 #page3-heading-desc #page3-desc a {
+        font-size: 2.8vw;
+    }
+
+    #page3 #page3-heading-desc #page3-desc a::after {
+        bottom: -2vw;
+        height: 0.03rem;
+    }
+
+    #page3 .products {
+        min-height: 100vh;
+        margin: 5vw 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #page3 .products .child-prod {
+        min-height: 35vh;
+    }
+
+    #page3 .products .child-prod .img-container {
+        height: 18vh;
+    }
+
+    #page3 .products .child-prod span {
+        margin-top: 6vw;
+        font-size: 3.2vw;
+    }
+
+    #page4 #message-block {
+        margin-top: 12vw;
+    }
+
+    #page4 #message-block #message {
+        font-size: 5.6vw;
+        font-weight: 900;
+        width: 85%;
+        line-height: 5.3vw;
+    }
+
+    #page4 #message-block #message-btn button {
+        margin-top: 76vw;
+        padding: 5.5vw 20.5vw;
+        font-size: 3vw;
+    }
+
+    #page4 #message-block #thought {
+        margin-top: 8vw;
+        width: 65%;
+        margin-bottom: 20vw;
+    }
+
+    #page4 #impact-block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #page4 #col1 #our-impact {
+        font-size: 5.8vw;
+        margin-top: 5vw;
+    }
+
+    #page4 #col1 p {
+        margin: 10vw 0;
+        width: 95%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 4vw;
+        line-height: 6vw;
+    }
+
+    #page4 #col1 a {
+        /* margin: 5vw 0; */
+        font-size: 3vw;
+    }
+
+    #page4 #col1 a:hover::after {
+        transform-origin: 100% 0%;
+        transform: scale(0, 1);
+    }
+
+    #page4 .impact-img {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10vw;
+    }
+
+    #page4 .impact-img #col2,
+    #col3 {
+        height: 24vh;
+        width: 24vh;
+    }
+
+    #page4 .impact-img img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #page4 #email-address {
+        padding: 0 3vw;
+        margin-top: -30vw;
+    }
+
+    #page4 #email-address #email-msg {
+        font-size: 6.5vw;
+    }
+
+    #page4 #email-address #arrow-icon {
+        font-size: 4.8vw;
+        cursor: pointer;
+    }
+
+    #page5{
+        height: 50vh;
+    }
+
+    #page5 #end-page-logo{
+        height: 30vw;
+        width: 30vw;
+        position: absolute;
+        left: -3vw;
+    }
+
+    #page5 #end-page-logo img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #page5 #connect-FAQ{
+        justify-content: flex-start;
+        gap: 18vw;
+        margin-top: 18vh;
+        padding: 4vw 4vw;
+        font-size: 4vw;
+    }
+    
+    #page5 #connect-FAQ #connect-with-us #connect-heading{
+        margin-bottom: 10vw;
+        color: rgb(161, 156, 156);
+        font-size: 3vw;
+    }
+    
+    #page5 #connect-FAQ #FAQs #FAQs-heading{
+        margin-bottom: 10vw;
+        color: rgb(161, 156, 156);
+        font-size: 3vw;
+        text-align: left;
+    } 
+    
+    #page5 #connect-FAQ #FAQs #more-FAQs{
+        text-align: left;
+    }
+
+    #mobile-content{
+        display: block;
+        padding: 0 3.5vw 10vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 2.8vw;
+        color: rgb(161, 156, 156);
+        text-transform: uppercase;
+    }
+    #footer{
+        display: flex;
+        text-align: justify;
+        flex-direction: column-reverse;
+        font-size: 3vw;
+        padding: 0vw 2vw;
+        /* background: greenyellow; */
+    }
+    
+    #footer #footer1 span{
+        margin: 0 1.3vw;
+    }
+    
+    #footer #footer1{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        font-size: 2.5vw;
+    }
+    
+    #footer #footer2{
+        line-height: 5vw;
+        margin-bottom: 5vw;
+    } 
+}
