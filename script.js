@@ -41,7 +41,7 @@ function locomotiveAnimation() {
   
   function navbarAnimation() {
     gsap.to("#nav-part1 svg", {
-      transform: "translateY(-160%)",
+      transform: "translateY(-130%)",
       scrollTrigger: {
         trigger: "#page1",
         scroller: "#main",
